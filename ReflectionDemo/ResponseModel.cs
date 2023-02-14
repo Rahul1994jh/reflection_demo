@@ -4,19 +4,19 @@
     {
         public Response? Response { get; set; }
 
-        [SearchAttribute(Name = "Response.Error")]
+        [BaseAttribute(Name = "Response.Error")]
         internal string? Error
         {
             get => Response?.Error;
         }
 
-        [SearchAttribute(Name = "Response.Exception")]
+        [BaseAttribute(Name = "Response.Exception")]
         internal string? Exception
         {
             get => Response?.Exception;
         }
 
-        [SearchAttribute(Name = "Response.Message")]
+        [BaseAttribute(Name = "Response.Message")]
         internal string? Message
         {
             get => Response?.Message;

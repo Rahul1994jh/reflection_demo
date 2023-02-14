@@ -18,11 +18,11 @@ static string?[] FilterPropertyWithValue<T>(T input)
 {
     return typeof(T)
                .GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
-               .Where(x => Attribute.IsDefined(x, typeof(SearchAttribute)))
+               .Where(x => Attribute.IsDefined(x, typeof(BaseAttribute)))
                .Where(x => x.GetValue(input) != null)
                .Select(x =>
                     x.GetCustomAttributes(true)
-                        .First(y => y.GetType() == typeof(SearchAttribute)) as SearchAttribute)
+                        .First(y => y.GetType() == typeof(BaseAttribute)) as BaseAttribute)
                .Select(x => x?.Name)
                .ToArray();
 }

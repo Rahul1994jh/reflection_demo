@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ReflectionDemo
 {
-    internal class SearchAttribute : Attribute
+    [AttributeUsage(AttributeTargets.Property)]
+    internal class BaseAttribute : Attribute
     {
         public string? Name { get; set; }
     }

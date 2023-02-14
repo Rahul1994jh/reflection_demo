@@ -2,15 +2,15 @@
 {
     internal class LogSearch : ResponseModel
     {
-        [SearchAttribute(Name = "TraceId")]
+        [BaseAttribute(Name = "TraceId")]
         public Guid? TraceId { get; set; }
-        [SearchAttribute(Name = "PreviousId")]
+        [BaseAttribute(Name = "PreviousId")]
         public Guid? PreviousId { get; set; }
-        [SearchAttribute(Name = "StatusCode")]
+        [BaseAttribute(Name = "StatusCode")]
         public int? StatusCode { get; set; }
-        [SearchAttribute(Name = "Request")]
+        [BaseAttribute(Name = "Request")]
         public string? Request { get; set; }
-        [SearchAttribute(Name = "Duration")]
+        [BaseAttribute(Name = "Duration")]
         public TimeSpan? Duration { get; set; }
 
         public static LogSearch GetDummyLogSearch()
